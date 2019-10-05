@@ -13,7 +13,7 @@ setuptools.setup(
     author='Oscar Roth Andersen',
     author_email='oscarrothandersen@gmail.com',
     url='https://github.com/odder/pyraminxolver',
-    download_url='https://github.com/odder/pyraminxolver/archive/v_01.tar.gz',
+    download_url='https://github.com/odder/pyraminxolver/archive/v1.0.0.tar.gz',
     description='This runs pyraminxolver Command Line',
     packages=['pyraminxolver'],
     python_requires='>=3.7'
