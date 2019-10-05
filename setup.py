@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name='PyraminXolver',
-    version='1.0',
+    version='1.0.1',
     license='MIT',
     entry_points={
         'console_scripts': [
@@ -12,8 +12,8 @@ setuptools.setup(
     },
     author='Oscar Roth Andersen',
     author_email='oscarrothandersen@gmail.com',
-    url='https://github.com/odder/pyraminxolver',
-    download_url='https://github.com/odder/pyraminxolver/archive/v1.0.0.tar.gz',
+    url='https://github.com/Odder/PyraminXolver',
+    download_url='https://github.com/Odder/PyraminXolver/archive/v1.0.1.tar.gz',
     description='This runs pyraminxolver Command Line',
     packages=['pyraminxolver'],
     python_requires='>=3.7'
