@@ -14,7 +14,7 @@ setuptools.setup(
     author_email='oscarrothandersen@gmail.com',
     url='https://github.com/Odder/PyraminXolver',
     download_url='https://github.com/Odder/PyraminXolver/archive/v1.0.1.tar.gz',
-    description='This runs pyraminxolver Command Line',
+    description='Extremely fast optimal and suboptimal Pyraminx solver',
     packages=['pyraminxolver'],
     python_requires='>=3.7'
 )

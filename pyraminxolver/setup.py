@@ -12,6 +12,7 @@ def setup():
 
 def create_move_table():
     move_table = [[-1, -1, -1, -1, -1, -1, -1, -1, -1] for _ in range(933120)]
+    inverse_moves = [0, 2, 1, 4, 3, 6, 5, 8, 7]
     queue = deque()
     queue.append(0)
     move_table[0][0] = 0
@@ -20,6 +21,8 @@ def create_move_table():
         node = queue.popleft()
         state = Pyraminx.id_to_state(node)
         for i in range(1, 9):
+            if move_table[node][i] > -1:
+                continue
             transformation = Pyraminx.move_transformations[i-1]
             new_state = Pyraminx.apply_move(state, transformation)
             new_id = Pyraminx.state_to_id(new_state)
@@ -27,7 +30,7 @@ def create_move_table():
                 move_table[new_id][0] = move_table[node][0] + 1
                 queue.append(new_id)
             move_table[node][i] = new_id
-
+            move_table[new_id][inverse_moves[i]] = node
     return move_table
 
 

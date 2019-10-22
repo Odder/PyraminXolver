@@ -13,9 +13,9 @@ args = parser.parse_args()
 
 
 def main():
-    print('Loading up Graph')
+    print('Loading up pyraminx graph')
     pyra = PyraminXolver()
-    print('Graph loaded')
+    print('Graph loaded, ready to solve')
     max_slack = args.max_slack
     scrambles = []
     if args.input_file:
@@ -48,6 +48,6 @@ def main():
 
 
 def setup():
-    print('Setting up Pyraminx Graph, hold tight!')
+    print('Setting up the initial pyraminx graph,this process might take around 1 minute')
     graph_setup()
-    print('Pyraminx Graph generated!')
+    print('Pyraminx graph generated, PyraminXolver is now ready for use!')

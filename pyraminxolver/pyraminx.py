@@ -20,6 +20,15 @@ class Pyraminx:
     ep = [[y for y in x] for x in itertools.permutations(range(6)) if is_even_permutation(x)]
     eo = [[y for y in x] for x in itertools.product(range(2), repeat=6) if sum(list(x)) % 2 == 0]
     co = [[y for y in x] for x in itertools.product(range(3), repeat=4)]
+    ep_dict = {}
+    for i, entry in enumerate(ep):
+        ep_dict[str(entry)] = i
+    eo_dict = {}
+    for i, entry in enumerate(eo):
+        eo_dict[str(entry)] = i
+    co_dict = {}
+    for i, entry in enumerate(co):
+        co_dict[str(entry)] = i
     move_transformations = [
         [  # U
             [0, 0, 0, 0, 0, 0],
@@ -90,12 +99,12 @@ class Pyraminx:
     def state_to_id(state):
         eo, co, ep = state
         idx = 0
-        if (ep not in Pyraminx.ep) or (co not in Pyraminx.co) or (eo not in Pyraminx.eo):
+        if (str(ep) not in Pyraminx.ep_dict) or (str(co) not in Pyraminx.co_dict) or (str(eo) not in Pyraminx.eo_dict):
             return -1
 
-        idx += Pyraminx.ep.index(ep)
-        idx += Pyraminx.co.index(co) * 360
-        idx += Pyraminx.eo.index(eo) * 29160
+        idx += Pyraminx.ep_dict[str(ep)]
+        idx += Pyraminx.co_dict[str(co)] * 360
+        idx += Pyraminx.eo_dict[str(eo)] * 29160
 
         return int(idx)
 
