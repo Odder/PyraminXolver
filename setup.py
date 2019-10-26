@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name='PyraminXolver',
-    version='1.0.1',
+    version='1.0.2',
     license='MIT',
     entry_points={
         'console_scripts': [

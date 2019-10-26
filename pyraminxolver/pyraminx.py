@@ -99,8 +99,6 @@ class Pyraminx:
     def state_to_id(state):
         eo, co, ep = state
         idx = 0
-        if (str(ep) not in Pyraminx.ep_dict) or (str(co) not in Pyraminx.co_dict) or (str(eo) not in Pyraminx.eo_dict):
-            return -1
 
         idx += Pyraminx.ep_dict[str(ep)]
         idx += Pyraminx.co_dict[str(co)] * 360

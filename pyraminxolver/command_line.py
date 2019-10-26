@@ -16,7 +16,7 @@ def main():
     print('Loading up pyraminx graph')
     pyra = PyraminXolver()
     print('Graph loaded, ready to solve')
-    max_slack = args.max_slack
+    slack = args.slack
     scrambles = []
     if args.input_file:
         with open(args.input_file, 'r') as f:
@@ -32,7 +32,7 @@ def main():
         else:
             print(f'Solving: {scramble}')
 
-        solutions = pyra.search_scramble(scramble, max_slack)
+        solutions = pyra.search_scramble(scramble, slack)
         for solution, length, time, path in solutions:
             if args.output_file:
                 with open(args.output_file, 'a') as f:
@@ -48,6 +48,6 @@ def main():
 
 
 def setup():
-    print('Setting up the initial pyraminx graph,this process might take around 1 minute')
+    print('Setting up the initial pyraminx graph')
     graph_setup()
     print('Pyraminx graph generated, PyraminXolver is now ready for use!')
