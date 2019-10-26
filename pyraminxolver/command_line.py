@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--input-file', help='Path to file with a bunch of pyraminx scrambles')
 parser.add_argument('--output-file', help='Path to output solutions')
 parser.add_argument('--scramble', help='Scamble wrapped in "". e.g. "L R U L"')
-parser.add_argument('--max-slack', default=0, type=int, help='Maximum distance to optimal solution for all solutions')
+parser.add_argument('--slack', default=0, type=int, help='Maximum distance to optimal solution for all solutions')
 parser.add_argument('--verbose', type=bool, help='Get more details')
 args = parser.parse_args()
 

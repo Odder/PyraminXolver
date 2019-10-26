@@ -39,8 +39,41 @@ pyraminxolver --scramble="R U R' L' U R" --slack=2
 ```python
 from pyraminxolver import PyraminXolver
 
-pyra = PyraminXolver()
-solutions = pyra.search_scramble("R U L R U L B' R' U")
+px = PyraminXolver()
+solutions = px.search_scramble("R U L R U L B' R' U")
 for solution, move_count, time_ns, _ in solutions:
     print(f'{solution} ({move_count} moves found in {time_ns // 1000000}ms)')
+```
+
+Generating algs for L4E with 2 moves slack for each case and dumping them into a file.
+```python
+from pyraminxolver import PyraminXolver, Pyraminx
+
+slack = 2
+file_name = 'l4e-solutions.txt'
+pyra = PyraminXolver()
+cases = Pyraminx.set([
+    [-1, -1, -1, 0, -1, 0],
+    [0, 0, 0, 0],
+    [-1, -1, -1, 3, -1, 5],
+])
+
+for case in cases:
+    solutions = pyra.search(case, slack)
+    with open(file_name, 'a') as f:
+        f.write(f'\nSolving a new L4E case\n')
+        for solution, length, timing, _ in solutions:
+            f.write(f'{solution} ({length})\n')
+```
+
+### State explanation:
+When generating a set we need to describe the properties of the pyraminx. We describe a fixed position, with some "wildcards" and then all valid cases will be based off that.
+The first array descibes EO, then CO and lastly EP.
+
+```python
+[
+    [UB, UR, UL, BR, RL, BL], # EO
+    [U, R, L, B], # CO
+    [UB, UR, UL, BR, RL, BL] # EP
+]
 ```

@@ -106,6 +106,40 @@ class Pyraminx:
 
         return int(idx)
 
+    @staticmethod
+    def set(state):
+        eo, co, ep = state
+        eo_set = []
+        co_set = []
+        ep_set = []
+        case_set = []
+
+        for case in Pyraminx.eo:
+            for x, y in zip(eo, case):
+                if x > -1 and x != y:
+                    break
+            else:
+                eo_set.append(case)
+
+        for case in Pyraminx.co:
+            for x, y in zip(co, case):
+                if x > -1 and x != y:
+                    break
+            else:
+                co_set.append(case)
+
+        for case in Pyraminx.ep:
+            for x, y in zip(ep, case):
+                if x > -1 and x != y:
+                    break
+            else:
+                ep_set.append(case)
+
+        for state in itertools.product(*[eo_set, co_set, ep_set]):
+            case_set.append(Pyraminx.state_to_id(state))
+
+        return case_set
+
 
 if __name__ == '__main__':
     pass

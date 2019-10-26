@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name='PyraminXolver',
-    version='1.0.2',
+    version='1.0.3',
     license='MIT',
     entry_points={
         'console_scripts': [
@@ -13,7 +13,6 @@ setuptools.setup(
     author='Oscar Roth Andersen',
     author_email='oscarrothandersen@gmail.com',
     url='https://github.com/Odder/PyraminXolver',
-    download_url='https://github.com/Odder/PyraminXolver/archive/v1.0.1.tar.gz',
     description='Extremely fast optimal and suboptimal Pyraminx solver',
     packages=['pyraminxolver'],
     python_requires='>=3.7'
