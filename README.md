@@ -1,4 +1,5 @@
-# PyraminXolver
+PyraminXolver
+====
 A pyraminx solver!
 
 ## Installation
